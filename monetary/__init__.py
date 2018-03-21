@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from monetary.main import (
+    decimal,
     cent,
     Fen,
     dollar2cent,
