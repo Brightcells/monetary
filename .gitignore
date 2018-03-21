@@ -1,0 +1,30 @@
+*.swp
+
+# Compiled python modules
+*.pyc
+*.pyo
+
+# Setuptools distribution folder
+build
+dist
+*.egg-info
+
+# Pyenv
+*.python-version
+
+# Pytest
+.cache
+.coverage
+
+# Tox
+.tox
+
+# Database
+*.db
+*.sqlite3
+
+# IDE
+*.idea
+
+# OS
+*.DS_Store
