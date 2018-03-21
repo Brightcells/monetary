@@ -9,8 +9,8 @@ version = '1.0.1'
 setup(
     name='monetary',
     version=version,
-    keywords='',
-    description='Monetary Convert',
+    keywords='Currency Monetary Convert',
+    description='Currency Convert',
     long_description=open('README.rst').read(),
 
     url='https://github.com/CurrencyClub/monetary',
