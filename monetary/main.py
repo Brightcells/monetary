@@ -6,6 +6,9 @@ from decimal import Decimal
 
 
 class Monetary(object):
+    def keep_ndigits(self, value, ndigits=2):
+        return '%.{}f'.format(ndigits) % value
+
     def decimal(self, value):
         """
         In [1]: Decimal(3.14)
@@ -41,7 +44,7 @@ class Monetary(object):
         """
         return self.mul(dollar, rate, cast_func=cast_func)
 
-    def dollar(self, cent, rate=100, cast_func=float):
+    def dollar(self, cent, rate=100, cast_func=float, ndigits=None):
         """
         Exchange Cent into Dollar
 
@@ -49,7 +52,8 @@ class Monetary(object):
         :param rate:
         :return:
         """
-        return self.div(cent, rate, cast_func=cast_func)
+        dollarV = self.div(cent, rate, cast_func=cast_func)
+        return self.keep_ndigits(dollarV, ndigits=ndigits) if ndigits else dollarV
 
 
 _global_instance = Monetary()

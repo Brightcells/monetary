@@ -9,6 +9,7 @@ class TestMonetaryCommands(object):
 
     def test_dollar(self):
         assert monetary.dollar(7) == 0.07
+        assert monetary.dollar(314.15926, ndigits=2) == '3.14'
 
     def test_mul(self):
         assert monetary.mul(1, 0.95) == 0.95
