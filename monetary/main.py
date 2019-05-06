@@ -25,11 +25,12 @@ class Monetary(object):
         """
         return cast_func(self.decimal(multiplicand) * self.decimal(multiplicator))
 
-    def div(self, dividend, divisor, cast_func=float):
+    def div(self, dividend, divisor, cast_func=float, ndigits=None):
         """
         24 ÷ 8 = 3, 24 is dividend, 8 is divisor.
         """
-        return cast_func(self.decimal(dividend) / self.decimal(divisor))
+        result = cast_func(self.decimal(dividend) / self.decimal(divisor))
+        return self.keep_ndigits(result, ndigits=ndigits) if ndigits else result
 
     def cent(self, dollar, rate=100, cast_func=int):
         """
@@ -52,8 +53,7 @@ class Monetary(object):
         :param rate:
         :return:
         """
-        dollarV = self.div(cent, rate, cast_func=cast_func)
-        return self.keep_ndigits(dollarV, ndigits=ndigits) if ndigits else dollarV
+        return self.div(cent, rate, cast_func=cast_func, ndigits=ndigits)
 
 
 _global_instance = Monetary()
