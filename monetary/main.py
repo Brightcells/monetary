@@ -58,7 +58,7 @@ class Monetary(object):
 
 _global_instance = Monetary()
 decimal = _global_instance.decimal
-cent = Fen = dollar2cent = Yuan2Fen = _global_instance.cent
-dollar = Yuan = cent2dollar = Fen2Yuan = _global_instance.dollar
+cent = Cent = fen = Fen = dollar2cent = Dollar2Cent = yuan2fen = Yuan2Fen = _global_instance.cent
+dollar = Dollar = yuan = Yuan = cent2dollar = Cent2Dollar = fen2yuan = Fen2Yuan = _global_instance.dollar
 mul = _global_instance.mul
 div = _global_instance.div
